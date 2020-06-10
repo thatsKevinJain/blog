@@ -1,0 +1,83 @@
+/* =================== */
+/* GLOBAL STYLE */
+/* =================== */
+
+body {
+	font-weight: lighter;
+	font-family: "Verdana", sans-serif;
+}
+
+/* =================== */
+/* CUSTOM FONTS */
+/* =================== */
+
+@font-face { font-family: h1; src: url('../res/fonts/h1.otf'); }
+@font-face { font-family: h2-h6; src: url('../res/fonts/h2-h6.ttf'); }
+
+
+/* =================== */
+/* NAVBAR CSS */
+/* =================== */
+
+#navbar {
+	overflow: hidden;
+	background-image: linear-gradient(#000000, #1f1f1f);
+	border-radius: 8px;
+	width: calc(80%);
+	margin: auto auto 8px auto;
+}
+
+#navbar a {
+	float: right;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 28px 14px 14px;
+	text-decoration: none;
+}
+
+#navbar a.home{
+	float: left;
+	padding: 6px 0px 6px 28px;
+}
+
+.sticky {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+/* =================== */
+/* MARKDOWN CSS */
+/* =================== */
+
+#outer-markdown {
+	border: 1px solid grey;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px grey;
+	width: calc(79%);
+	margin: auto;
+}
+
+#inner-markdown {
+	padding: 10px;
+}
+
+#inner-markdown img {
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px grey;
+	width: 100%;
+	height: 100%;
+}
+
+#inner-markdown h1 {
+	font-family: h1, sans-serif;
+	text-align: center;
+}
+
+#inner-markdown h2, h3, h4, h5, h6 {
+	font-family: h2-h6, sans-serif;
+	text-align: left;
+	/*width: calc(80%);*/
+}
