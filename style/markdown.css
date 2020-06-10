@@ -1,0 +1,106 @@
+/* =================== */
+/* MARKDOWN CSS */
+/* =================== */
+
+#outer-markdown {
+	border: 1px solid grey;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px grey;
+	width: calc(79%);
+	margin: auto;
+}
+
+#inner-markdown {
+	padding: 10px 30px 10px 30px;
+}
+
+#inner-markdown img {
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px grey;
+	width: 100%;
+	height: auto;
+}
+
+#inner-markdown h1 {
+	font-family: h1, sans-serif;
+	text-align: center;
+}
+
+#inner-markdown h2, h3, h4, h5, h6 {
+	font-family: h2-h6, sans-serif;
+	text-align: left;
+}
+
+#inner-markdown a {
+	color: #59acf3;
+}
+
+#inner-markdown a:hover {
+	color: #a7d8ff;
+	text-decoration: none;
+}
+
+#inner-markdown p {
+	margin-bottom: 9px;
+}
+
+#inner-markdown blockquote {
+	font-style: italic;
+}
+
+#inner-markdown blockquote:before {
+	content: "\201C";
+	font-size: 40px;
+	margin-left: -10px;
+	font-family: georgia, serif;
+	color: #eee;
+}
+
+#inner-markdown blockquote p {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 18px;
+	margin: 10px;
+	font-style: italic;
+}
+
+#inner-markdown code, pre {
+	font-family: Menlo, Monaco, Andale Mono, Courier New, monospace;
+}
+
+#inner-markdown strong {
+	font-weight: bold;
+}
+
+#inner-markdown code {
+	padding: 3px 3px;
+	border-radius: 4px;
+	background: #a3a3a3;
+	font-style: italic;
+}
+
+#inner-markdown pre {
+	display: block;
+	padding: 14px;
+	margin: 0 0 18px;
+	line-height: 18px;
+	font-size: 18px;
+	border: 1px solid #334;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	background-color: #f6f8fa;
+	border-radius: 4px;
+}
+
+#inner-markdown pre code {
+	font-size: 12px;
+	padding: 0;
+	background: transparent;
+}
+
+#inner-markdown sup {
+	font-size: 0.83em;
+	vertical-align: super;
+	line-height: 0;
+}
