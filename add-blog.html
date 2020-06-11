@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style/main.css"/>
+		<link rel="stylesheet" href="style/markdown.css"/>
+	</head>
+
+	<body>
+
+		<h2>Add a new blog</h2>
+
+		<form action="http://139.59.62.18:2018/blog/add" method="post">
+
+			<label for="name">Name of blog</label><br>
+			<input type="text" id="name" name="name" value="why-use-markdown"><br><br>
+
+			<label for="markdown">Markdown</label><br>
+			<textarea id="markdown" name="markdown"># Hello World</textarea><br>
+
+			<button type="submit">Add</button>
+
+		</form>
+
+		<p id="output"></p>
+	</body>
+</html>
