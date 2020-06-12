@@ -1,5 +1,5 @@
 /* =================== */
-/* GLOBAL STYLE */
+/*    GLOBAL STYLE     */
 /* =================== */
 
 body {
@@ -8,7 +8,7 @@ body {
 }
 
 /* =================== */
-/* CUSTOM FONTS */
+/*    CUSTOM FONTS     */
 /* =================== */
 
 @font-face { font-family: h1; src: url('../res/fonts/h1.otf'); }
@@ -16,7 +16,7 @@ body {
 
 
 /* =================== */
-/* NAVBAR CSS */
+/*     NAVBAR CSS      */
 /* =================== */
 
 #navbar {

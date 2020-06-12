@@ -13,16 +13,17 @@ async function fetchData(data = {}) {
 	return response.json();
 }
 
-// Placeholder text //
-var text = "# Broken Link";
-
 // Fetch the blog name //
 var url_string = window.location.href;
 var url = new URL(url_string);
 var name = url.searchParams.get("name");
 
+// Initialise Showdown //
 var converter = new showdown.Converter();
 converter.setOption('noHeaderId', true);
+
+// Set Placeholder text //
+var text = "# Broken Link";
 document.getElementById('inner-markdown').innerHTML = converter.makeHtml(text)
 
 if(name && name.length > 0){
@@ -36,7 +37,6 @@ if(name && name.length > 0){
 	.catch(console.log)
 }
 else{
-	
 	// Hide the Markdown DIV Element
 	document.getElementById("outer-markdown").style.display = "none"
 }
