@@ -9,7 +9,6 @@ converter.setOption('noHeaderId', true);
 ////////////////////
 //   PLACEHOLDER  //
 ////////////////////
-
 var text = "# Broken Link";
 setBody(text)
 
@@ -33,7 +32,7 @@ switch(pathname){
 ////////////////////
 //    FUNCTIONS   //
 ////////////////////
-async function fetchData(data = {}) {
+async function fetchBlogData(data = {}) {
 
 	const url = 'http://139.59.62.18:2018/blog/fetch'
 
@@ -47,9 +46,23 @@ async function fetchData(data = {}) {
 	return response.json();
 }
 
+async function fetchAllBlog(data = {}) {
+
+	const url = 'http://139.59.62.18:2018/blog/fetchAll'
+
+	const response = await fetch(url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	});
+	return response.json();
+}
+
 function populateBody(name){
 	// Name exists, fetch the document //
-	fetchData({ name: name })
+	fetchBlogData({ name: name })
 	.then((res) => {
 		if(res && res.markdown)
 			setBody(res.markdown)
@@ -72,7 +85,10 @@ async function fetchBlog(){
 		populateBody(name)
 	}
 	else{
-		// Hide the Markdown DIV Element
+		// Hide the Markdown DIV Element //
 		document.getElementById("outer-markdown").style.display = "none"
+
+		// Fetch all blogs //
+		fetchAllBlog().then(console.log).catch(console.log)
 	}
 }
