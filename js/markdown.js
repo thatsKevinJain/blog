@@ -1,4 +1,38 @@
-// Standard Fetch Functions //
+////////////////////
+//      INIT      //
+////////////////////
+const converter = new showdown.Converter();
+converter.setOption('noHeaderId', true);
+
+
+
+////////////////////
+//   PLACEHOLDER  //
+////////////////////
+
+var text = "# Broken Link";
+setBody(text)
+
+
+
+////////////////////
+//     ROUTER     //
+////////////////////
+const pathname = window.location.pathname
+
+switch(pathname){
+
+	case "/": 	populateBody("home");
+				break;
+
+	case "/views/blog":		fetchBlog();
+							break;
+}
+
+
+////////////////////
+//    FUNCTIONS   //
+////////////////////
 async function fetchData(data = {}) {
 
 	const url = 'http://139.59.62.18:2018/blog/fetch'
@@ -13,30 +47,32 @@ async function fetchData(data = {}) {
 	return response.json();
 }
 
-// Fetch the blog name //
-var url_string = window.location.href;
-var url = new URL(url_string);
-var name = url.searchParams.get("name");
-
-// Initialise Showdown //
-var converter = new showdown.Converter();
-converter.setOption('noHeaderId', true);
-
-// Set Placeholder text //
-var text = "# Broken Link";
-document.getElementById('inner-markdown').innerHTML = converter.makeHtml(text)
-
-if(name && name.length > 0){
-
+function populateBody(name){
 	// Name exists, fetch the document //
 	fetchData({ name: name })
 	.then((res) => {
 		if(res && res.markdown)
-			document.getElementById('inner-markdown').innerHTML = converter.makeHtml(res.markdown)
+			setBody(res.markdown)
 	})
 	.catch(console.log)
 }
-else{
-	// Hide the Markdown DIV Element
-	document.getElementById("outer-markdown").style.display = "none"
+
+function setBody(body){
+	document.getElementById('inner-markdown').innerHTML = converter.makeHtml(body)
+}
+
+async function fetchBlog(){
+
+	// Fetch the blog name //
+	const url_string = window.location.href;
+	const url = new URL(url_string);
+	const name = url.searchParams.get("name");
+
+	if(name && name.length > 0){
+		populateBody(name)
+	}
+	else{
+		// Hide the Markdown DIV Element
+		document.getElementById("outer-markdown").style.display = "none"
+	}
 }
