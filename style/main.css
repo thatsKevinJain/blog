@@ -3,7 +3,7 @@
 /* =================== */
 
 body {
-	font-weight: lighter;
+	font-weight: 300;
 	font-family: "Verdana", sans-serif;
 }
 
@@ -29,6 +29,12 @@ body {
 	border-radius: 8px;
 	width: calc(80%);
 	margin: auto auto 8px auto;
+}
+
+@media screen and (max-width: 480px) {
+	#navbar {
+		width: calc(100%);
+	}
 }
 
 #navbar a {
