@@ -15,11 +15,6 @@ body {
 @font-face { font-family: h2-h6; src: url('../res/fonts/h2-h6.otf'); }
 
 /* =================== */
-/*   BLOG LIST GRID    */
-/* =================== */
-
-
-/* =================== */
 /*     NAVBAR CSS      */
 /* =================== */
 
@@ -61,4 +56,45 @@ body {
 	left: 0;
 	right: 0;
 	top: 0;
+}
+
+/* =================== */
+/*   BLOG LIST ITEMS   */
+/* =================== */
+
+#outer-list {
+	border: 1px solid grey;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px grey;
+	width: calc(79%);
+	margin: auto;
+}
+
+@media screen and (max-width: 480px) {
+	#outer-list {
+		width: calc(99%);
+	}
+}
+
+#outer-list a{
+	color: black;
+	text-decoration: none;
+}
+
+#list-item {
+	margin: 8px;
+	padding: 10px;
+	border: 1px solid grey;
+	border-radius: 4px;
+	text-align: center;
+	box-shadow: 0px 0px 2px grey;
+}
+
+#list-item-title {
+	font-weight: 800;
+}
+
+#list-item-time {
+	font-weight: 100;
+	font-size: 10px;
 }
