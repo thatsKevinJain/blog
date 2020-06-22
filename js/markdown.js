@@ -100,7 +100,7 @@ async function fetchAllBlogs(data = {}) {
 	return response.json();
 }
 
-function createListItems(items){
+function createListItems(){
 
 	fetchAllBlogs()
 	.then((items) => {
