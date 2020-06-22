@@ -24,6 +24,9 @@ switch(pathname){
 	case "/": 	populateBody("home");
 				break;
 
+	case "/views/about": 	populateBody("about");
+							break;
+
 	case "/views/blog":		fetchBlog();
 							break;
 }
