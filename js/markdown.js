@@ -37,7 +37,7 @@ switch(pathname){
 /////////////////////////////
 async function fetchBlogData(data = {}) {
 
-	const url = 'http://139.59.62.18:2018/blog/fetch'
+	const url = 'https://backend.justanotherripple.com/blog/fetch'
 
 	const response = await fetch(url, {
 		method: 'POST',
@@ -91,7 +91,7 @@ async function fetchBlog(){
 
 async function fetchAllBlogs(data = {}) {
 
-	const url = 'http://139.59.62.18:2018/blog/fetchAll'
+	const url = 'https://backend.justanotherripple.com/blog/fetchAll'
 
 	const response = await fetch(url, {
 		method: 'POST',
