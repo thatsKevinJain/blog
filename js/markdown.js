@@ -1,8 +1,8 @@
 ////////////////////
 //      INIT      //
 ////////////////////
-// const BASE_URL="https://backend.justanotherripple.com"
-const BASE_URL="http://localhost:3000"
+const BASE_URL="https://backend.justanotherripple.com"
+// const BASE_URL="http://localhost:3000"
 
 const converter = new showdown.Converter();
 converter.setOption('noHeaderId', true);
