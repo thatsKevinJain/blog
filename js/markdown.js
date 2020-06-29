@@ -1,18 +1,17 @@
 ////////////////////
 //      INIT      //
 ////////////////////
+const BASE_URL="https://backend.justanotherripple.com"
+// const BASE_URL="http://localhost:3000"
+
 const converter = new showdown.Converter();
 converter.setOption('noHeaderId', true);
-
-
 
 ////////////////////
 //   PLACEHOLDER  //
 ////////////////////
 var text = "# Broken Link";
 setBody(text)
-
-
 
 ////////////////////
 //     ROUTER     //
@@ -29,6 +28,9 @@ switch(pathname){
 
 	case "/views/blog":		fetchBlog();
 							break;
+
+	case "/views/blog":		addBlogUrl();
+							break;
 }
 
 
@@ -37,7 +39,7 @@ switch(pathname){
 /////////////////////////////
 async function fetchBlogData(data = {}) {
 
-	const url = 'https://backend.justanotherripple.com/blog/fetch'
+	const url = `${BASE_URL}/blog/fetch`
 
 	const response = await fetch(url, {
 		method: 'POST',
@@ -91,7 +93,7 @@ async function fetchBlog(){
 
 async function fetchAllBlogs(data = {}) {
 
-	const url = 'https://backend.justanotherripple.com/blog/fetchAll'
+	const url = `${BASE_URL}/blog/fetchAll`
 
 	const response = await fetch(url, {
 		method: 'POST',
@@ -130,9 +132,29 @@ function createListItems(){
 			time.innerHTML = new Date(items[i].createdAt).toDateString();
 			listItem.appendChild(time);
 
+			// Seperator //
+			var box = document.createElement("p");
+			box.id = "list-item-box";
+			box.innerHTML = "&#x25cf;"
+			listItem.appendChild(box);
+
+			// Category //
+			var time = document.createElement("p");
+			time.id = "list-item-category";
+			time.innerHTML = items[i].categoryName;
+			listItem.appendChild(time);
+
 			link.appendChild(listItem);
 			list.appendChild(link);
 		}
 	})
 	.catch(console.log)
+}
+
+/////////////////////////////
+//   ADD BLOG FUNCTIONS   //
+/////////////////////////////
+function addBlogUrl(){
+
+	document.getElementById("add-blog-url").action = `${BASE_URL}/blog/add`
 }
