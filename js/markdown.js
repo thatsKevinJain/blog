@@ -1,8 +1,8 @@
 ////////////////////
 //      INIT      //
 ////////////////////
-const BASE_URL="https://backend.justanotherripple.com"
-// const BASE_URL="http://localhost:3000"
+// const BASE_URL="https://backend.justanotherripple.com"
+const BASE_URL="http://localhost:3000"
 
 const converter = new showdown.Converter();
 converter.setOption('noHeaderId', true);
@@ -10,7 +10,8 @@ converter.setOption('noHeaderId', true);
 ////////////////////
 //   PLACEHOLDER  //
 ////////////////////
-var text = "# Broken Link";
+var text = "# Loading...";
+var error_text = "# Broken Link";
 setBody(text)
 
 ////////////////////
@@ -58,7 +59,7 @@ function populateBody(name){
 		if(res && res.markdown)
 			setBody(res.markdown)
 	})
-	.catch(console.log)
+	.catch(() => setBody(error_text))
 }
 
 function setBody(body){
@@ -148,13 +149,12 @@ function createListItems(){
 			list.appendChild(link);
 		}
 	})
-	.catch(console.log)
+	.catch(() => setBody(error_text))
 }
 
 /////////////////////////////
 //   ADD BLOG FUNCTIONS   //
 /////////////////////////////
 function addBlogUrl(){
-
 	document.getElementById("add-blog-url").action = `${BASE_URL}/blog/add`
 }
