@@ -29,9 +29,6 @@ switch(pathname){
 
 	case "/views/blog":		fetchBlog();
 							break;
-
-	case "/views/add-blog":	addBlogUrl();
-							break;
 }
 
 
@@ -150,11 +147,4 @@ function createListItems(){
 		}
 	})
 	.catch(() => setBody(error_text))
-}
-
-/////////////////////////////
-//   ADD BLOG FUNCTIONS   //
-/////////////////////////////
-function addBlogUrl(){
-	document.getElementById("add-blog-form").action = `${BASE_URL}/blog/add`
 }
