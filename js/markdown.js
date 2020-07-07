@@ -1,8 +1,8 @@
 ////////////////////
 //      INIT      //
 ////////////////////
-// const BASE_URL="https://backend.justanotherripple.com"
-const BASE_URL="http://localhost:3000"
+const BASE_URL="https://backend.justanotherripple.com"
+// const BASE_URL="http://localhost:3000"
 
 const converter = new showdown.Converter();
 converter.setOption('noHeaderId', true);
@@ -30,7 +30,7 @@ switch(pathname){
 	case "/views/blog":		fetchBlog();
 							break;
 
-	case "/views/blog":		addBlogUrl();
+	case "/views/add-blog":	addBlogUrl();
 							break;
 }
 
@@ -156,5 +156,5 @@ function createListItems(){
 //   ADD BLOG FUNCTIONS   //
 /////////////////////////////
 function addBlogUrl(){
-	document.getElementById("add-blog-url").action = `${BASE_URL}/blog/add`
+	document.getElementById("add-blog-form").action = `${BASE_URL}/blog/add`
 }
