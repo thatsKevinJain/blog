@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<h2><strong>Edit blog on JAR</strong></h2>
+
+		<p>
+			<br>
+			<strong>STEPS</strong><br>
+			1 - Copy the <strong>Name ID</strong> from the website.<br>
+			2 - Press <strong>Find Blog</strong>.<br>
+			3 - Edit all necessary details details<br>
+			4 - Press <strong>Edit</strong> button!<br>
+			5 - Check the "Blog" section on the website! Enjoy!<br>
+		</p>
+
+		<div id="drop">
+			<input type="text" id="id" value="home"><br><br>
+			<button onclick="findBlog()">Find Blog</button>
+		</div>
+
+		<br><br><br><br>
+		<div>
+
+				<label for="title">Title</label><br>
+				<input type="text" id="title" name="title" value=""><br><br>
+
+				<label for="name">Name</label><br>
+				<input type="text" id="name" name="name" value=""><br><br>
+
+				<label for="categoryName">Category</label><br>
+				<input type="text" id="categoryName" name="categoryName" value=""><br><br>
+
+				<label for="markdown">Body (Markdown)</label><br>
+				<textarea id="markdown" name="markdown" rows="20" cols="50"># Hello World \n Enter Markdown Body Here</textarea><br>
+
+				<button type="submit" height="200px" width="200px" onclick="editBlog()">Edit</button>
+		</div>
+
+		<br><br><br><br>
+		<div id="output"></div>
+
+		<script type="text/javascript">
+			var output = document.getElementById("output")
+			function findBlog(){
+				var name = document.getElementById("name").value
+				const userAction = async () => {
+					const response = await fetch(`https://backend.justanotherripple.com/blog/fetch?name=${name}`);
+					const body = await response.json();
+
+					document.getElementById("title").value = body.title;
+					document.getElementById("name").value = body.name;
+					document.getElementById("categoryName").value = body.categoryName;
+					document.getElementById("markdown").value = body.markdown;
+				}
+				userAction();
+			}
+
+			function editBlog(){
+				const newBody = {};
+				newBody['title'] = document.getElementById("title").value
+				newBody['name'] = document.getElementById("name").value
+				newBody['categoryName'] = document.getElementById("categoryName").value
+				newBody['markdown'] = document.getElementById("markdown").value
+
+				console.log(newBody);
+
+				var name = document.getElementById("name").value
+
+				const userAction = async () => {
+					const response = await fetch(`https://backend.justanotherripple.com/blog/update?name=${name}`, {
+						method: 'POST',
+						body: JSON.stringify(newBody),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					});
+					const myJson = await response.json();
+					output.innerHTML = JSON.stringify(myJson,null,4);
+				}
+				userAction();
+			}
+		</script>
+	</body>
+</html>
