@@ -48,10 +48,11 @@
 		<script type="text/javascript">
 			var output = document.getElementById("output")
 			function findBlog(){
-				var name = document.getElementById("id").value
+				var newBody = Object.assign({}, {name: document.getElementById("id").value})
 				const userAction = async () => {
-					const response = await fetch(`https://backend.justanotherripple.com/blog/fetch?name=${name}`, {
+					const response = await fetch(`https://backend.justanotherripple.com/blog/fetch`, {
 						method: 'POST',
+						body: JSON.stringify(newBody),
 						headers: {
 							'Content-Type': 'application/json'
 						}
