@@ -17,7 +17,7 @@ setBody(text)
 ////////////////////
 //     ROUTER     //
 ////////////////////
-const pathname = window.location.pathname
+const pathname = window.location.pathname.split("/just-another-ripple").join("")
 
 switch(pathname){
 
@@ -29,6 +29,8 @@ switch(pathname){
 
 	case "/views/blog":		fetchBlog();
 							break;
+
+	default: console.log("Incorrect pathname: " + pathname);
 }
 
 
