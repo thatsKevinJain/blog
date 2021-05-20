@@ -17,7 +17,9 @@
 }
 
 #inner-markdown {
-	padding: 10px 30px 10px 30px;
+	max-width: 500px;
+	margin: auto;
+	text-align: justify;
 }
 
 #inner-markdown img {
@@ -35,6 +37,7 @@
 #inner-markdown h2, h3, h4, h5, h6 {
 	font-family: h2-h6, sans-serif;
 	text-align: left;
+	padding: 10px 30px 10px 30px;
 }
 
 #inner-markdown a {
@@ -48,10 +51,12 @@
 
 #inner-markdown p {
 	margin-bottom: 9px;
+	padding: 10px 30px 10px 30px;
 }
 
 #inner-markdown blockquote {
 	font-style: italic;
+	padding: 10px 0px 10px 0px;
 }
 
 #inner-markdown blockquote:before {
