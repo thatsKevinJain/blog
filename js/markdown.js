@@ -26,7 +26,7 @@ converter.setOption('noHeaderId', true);
 //   PLACEHOLDER  //
 ////////////////////
 var text = "# Loading...";
-var error_text = "# Broken Link";
+var error_text = "# Error, Reload Page!";
 setBody(text)
 
 ////////////////////
