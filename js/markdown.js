@@ -32,7 +32,7 @@ setBody(text)
 ////////////////////
 //     ROUTER     //
 ////////////////////
-const pathname = window.location.pathname.split("/blog").join("")
+const pathname = window.location.pathname.split(/\/blog(.+)/)[1]
 
 switch(pathname){
 
