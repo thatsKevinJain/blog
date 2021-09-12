@@ -36,7 +36,7 @@ const pathname = window.location.pathname.split(/\/blog(.+)/)[1]
 
 switch(pathname){
 
-	case "/": 	populateBody("home");
+	case "/blog/": 	populateBody("home");
 				break;
 
 	case "/views/about": 	populateBody("about");
