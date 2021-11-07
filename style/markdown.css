@@ -2,7 +2,7 @@
 /* MARKDOWN CSS */
 /* =================== */
 
-#outer-markdown {
+/*#outer-markdown {
 	border: 1px solid #736b5e;
 	border-radius: 4px;
 	box-shadow: 0px 0px 2px grey;
@@ -14,12 +14,12 @@
 	#outer-markdown {
 		width: calc(99%);
 	}
-}
+}*/
 
 #inner-markdown {
 	max-width: 600px;
 	margin: auto;
-	text-align: justify;
+	text-align: center;
 }
 
 #inner-markdown img {
@@ -56,27 +56,18 @@
 
 #inner-markdown blockquote {
 	font-style: italic;
-	padding: 10px 0px 10px 0px;
 }
 
 #inner-markdown blockquote:before {
 	content: "\201C";
-	font-size: 40px;
-	margin-left: -10px;
-	font-family: georgia, serif;
-	color: #eee;
+	font-size: 20px;
+	margin-left: 8px;
 }
 
 #inner-markdown blockquote p {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 300;
-	line-height: 18px;
-	margin: 10px;
 	font-style: italic;
-}
-
-#inner-markdown code, pre {
-	font-family: Menlo, Monaco, Andale Mono, Courier New, monospace;
 }
 
 #inner-markdown strong {

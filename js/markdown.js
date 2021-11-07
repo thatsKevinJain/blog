@@ -1,15 +1,15 @@
 // Reload CSS //
 // (function() {
-//   var h, a, f;
-//   a = document.getElementsByTagName('link');
-//   for (h = 0; h < a.length; h++) {
-//     f = a[h];
-//     if (f.rel.toLowerCase().match(/stylesheet/) && f.href) {
-//       var g = f.href.replace(/(&|\?)rnd=\d+/, '');
-//       f.href = g + (g.match(/\?/) ? '&' : '?');
-//       f.href += 'rnd=' + (new Date().valueOf());
-//     }
-//   }
+// 	var h, a, f;
+// 	a = document.getElementsByTagName('link');
+// 	for (h = 0; h < a.length; h++) {
+// 		f = a[h];
+// 		if (f.rel.toLowerCase().match(/stylesheet/) && f.href) {
+// 			var g = f.href.replace(/(&|\?)rnd=\d+/, '');
+// 			f.href = g + (g.match(/\?/) ? '&' : '?');
+// 			f.href += 'rnd=' + (new Date().valueOf());
+// 		}
+// 	}
 // })()
 
 ////////////////////
@@ -33,6 +33,7 @@ setBody(text)
 //     ROUTER     //
 ////////////////////
 const pathname = window.location.pathname.split(/\/blog(.+)/)[1]
+// const pathname = window.location.pathname
 
 switch(pathname){
 
@@ -142,16 +143,16 @@ function createListItems(){
 			listItem.appendChild(title);
 
 			// Time //
-			var time = document.createElement("p");
-			time.id = "list-item-time";
-			time.innerHTML = new Date(items[i].createdAt).toDateString();
-			listItem.appendChild(time);
+			// var time = document.createElement("p");
+			// time.id = "list-item-time";
+			// time.innerHTML = new Date(items[i].createdAt).toDateString();
+			// listItem.appendChild(time);
 
 			// Seperator //
-			var box = document.createElement("p");
-			box.id = "list-item-box";
-			box.innerHTML = "-"
-			listItem.appendChild(box);
+			// var box = document.createElement("p");
+			// box.id = "list-item-box";
+			// box.innerHTML = "-"
+			// listItem.appendChild(box);
 
 			// Category //
 			var time = document.createElement("p");
