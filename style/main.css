@@ -77,7 +77,8 @@ body {
 }
 
 #outer-list a{
-	color: #e8e6e3;
+	/*color: #e8e6e3;*/
+	color: #000;
 	text-decoration: none;
 }
 
