@@ -2,7 +2,6 @@
 //      INIT      //
 ////////////////////
 const BASE_URL="https://jar-backend-8a826bb5171f.herokuapp.com"
-
 // const BASE_URL="https://backend.justanotherripple.com"
 // const BASE_URL="http://localhost:3000"
 
